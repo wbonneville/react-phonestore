@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
-import { Link } from 'react-router-dom';
-import { ProductConsumer } from '../context';
-import PropTypes from 'prop-types';
+import React, { Component } from "react";
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+import { ProductConsumer } from "../context";
+import PropTypes from "prop-types";
 
 export default class Product extends Component {
   render() {
+    // destructuring
+    // pull values out of product
     const { id, title, img, price, inCart } = this.props.product;
 
     return (
@@ -22,6 +24,7 @@ export default class Product extends Component {
                 </Link>
                 <button
                   className="cart-btn"
+                  // btn disabled if item is in cart already
                   disabled={inCart ? true : false}
                   onClick={() => {
                     value.addToCart(id);
@@ -53,15 +56,18 @@ export default class Product extends Component {
   }
 }
 
+// define prop types
 Product.propTypes = {
   product: PropTypes.shape({
     id: PropTypes.number,
     img: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.number,
-    inCart: PropTypes.bool,
-  }).isRequired,
+    inCart: PropTypes.bool
+  }).isRequired
 };
+
+// styled component
 
 const ProductWrapper = styled.div`
   .card {

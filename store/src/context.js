@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { storeProducts, detailProduct } from './data';
+import React, { Component } from "react";
+import { storeProducts, detailProduct } from "./data";
 const ProductContext = React.createContext();
 // Provider
 // Consumer
@@ -15,7 +15,7 @@ class ProductProvider extends Component {
     modalProduct: detailProduct,
     cartSubTotal: 0,
     cartTax: 0,
-    cartTotal: 0,
+    cartTotal: 0
   };
 
   // set the products
@@ -89,7 +89,7 @@ class ProductProvider extends Component {
       // addTotals() is a method handler defined on line 201
       () => {
         this.addTotals();
-      },
+      }
     );
   };
 
@@ -137,7 +137,7 @@ class ProductProvider extends Component {
       // recalculate the totals with same addTotals() method
       () => {
         this.addTotals();
-      },
+      }
     );
   };
 
@@ -164,7 +164,7 @@ class ProductProvider extends Component {
         // recalculate the totals
         () => {
           this.addTotals();
-        },
+        }
       );
     }
   };
@@ -193,13 +193,13 @@ class ProductProvider extends Component {
         return {
           // return the state with altered arrays
           cart: [...tempCart],
-          products: [...tempProducts],
+          products: [...tempProducts]
         };
       },
       // recalculate the totals
       () => {
         this.addTotals();
-      },
+      }
     );
   };
 
@@ -214,7 +214,7 @@ class ProductProvider extends Component {
         this.setProducts();
         // re-calculate the new totals
         this.addTotals();
-      },
+      }
     );
   };
 
@@ -249,7 +249,7 @@ class ProductProvider extends Component {
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,
-          clearCart: this.clearCart,
+          clearCart: this.clearCart
         }}
       >
         {/* add all children */}
